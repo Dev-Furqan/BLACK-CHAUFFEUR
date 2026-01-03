@@ -326,3 +326,41 @@ body{
   .siteFooter__grid{ grid-template-columns: 1fr; }
   .footBottomLinks{ gap: 14px; }
 }
+
+.hdrRight{display:flex;align-items:center;gap:10px}
+
+/* buttons you already have can stay, these are safe */
+.btn{display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 16px;border-radius:999px;font-weight:600;font-size:13px;text-decoration:none}
+.btn--ghost{border:1px solid #ff6a00;color:#ff6a00;background:#fff}
+.btn--solid{border:1px solid #ff6a00;background:#ff6a00;color:#fff}
+
+.userMenu{position:relative}
+.userMenu__btn{
+  display:flex;align-items:center;gap:10px;
+  background:#fff;border:1px solid #eee;border-radius:999px;
+  height:38px;padding:0 12px;cursor:pointer;
+}
+.userMenu__avatar{
+  width:26px;height:26px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#111;color:#fff;font-weight:700;font-size:13px;
+}
+.userMenu__name{font-size:13px;font-weight:600;color:#111;max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.userMenu__chev{font-size:12px;color:#666;margin-left:2px}
+
+.userMenu__drop{
+  position:absolute;right:0;top:calc(100% + 10px);
+  width:210px;background:#fff;border:1px solid #eee;border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  padding:8px;display:none;z-index:1000;
+}
+.userMenu__drop.is-open{display:block}
+
+.userMenu__item{
+  display:flex;align-items:center;
+  padding:10px 10px;border-radius:10px;
+  color:#111;text-decoration:none;font-size:13px;font-weight:600;
+}
+.userMenu__item:hover{background:#f6f6f6}
+.userMenu__item--danger{color:#d11}
+.userMenu__item--danger:hover{background:#fff1f1}

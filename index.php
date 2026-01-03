@@ -216,7 +216,7 @@ require_once __DIR__ . "/includes/header.php";
           <li><span class="ctaCheck">✓</span> Flexible and transparent pricing</li>
         </ul>
 
-        <a href="#" class="ctaBtn">Get started</a>
+        <a href="<?= BASE_URL ?>/register.php" class="ctaBtn">Get started</a>
       </div>
 
       <!-- RIGHT (White) -->
@@ -239,7 +239,7 @@ require_once __DIR__ . "/includes/header.php";
           <li><span class="ctaCheck ctaCheck--dark">✓</span> We cover your transportation needs at 100%</li>
         </ul>
 
-        <a href="#" class="ctaBtn">Get started</a>
+        <a href="<?= BASE_URL ?>/register.php" class="ctaBtn">Get started</a>
       </div>
 
     </div>

@@ -1,0 +1,255 @@
+/* =========================
+   SERVICES PAGE — PIXEL PERFECT (with <img>)
+   Works with your current services.php markup
+========================= */
+/* =========================
+   GLOBAL FONT
+========================= */
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+:root{
+  --max: 1180px;
+  --text:#111;
+  --muted:#333;
+  --line:#e6e6e6;
+}
+
+.container{
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* ===== HERO ===== */
+.svcHero{
+  position: relative;
+  height: 260px;
+  overflow:hidden;
+  background:#ddd;
+}
+
+.svcHero__bg{
+  position:absolute;
+  inset:0;
+  background: url("../../img/service/hero.png") center/cover no-repeat;
+  transform: scale(1.02);
+}
+
+.svcHero__overlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.35);
+}
+
+.svcHero__title{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  color:#fff;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===== QUICK LINKS (tags) ===== */
+.svcQuick{
+  padding: 26px 0 10px;
+  background:#fff;
+}
+
+.svcQuick__row{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 12px;
+  justify-content:center;
+}
+
+.svcQuick__link{
+  font-size: 12px;
+  color:#111;
+  text-decoration:none;
+  border:1px solid var(--line);
+  padding: 7px 12px;
+  border-radius: 10px;
+  background:#fff;
+}
+
+.svcQuick__link:hover{
+  border-color:#dcdcdc;
+}
+
+/* ===== BLOCKS WRAPPER ===== */
+.svcBlocks{
+ margin-top: 34px;
+  background:#fff;
+}
+
+.svcBlocks__wrap{
+  width: min(980px, 100%);
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap: 60px; 
+}
+
+/* ===== EACH ROW ===== */
+.svcRow{
+  display:grid;
+  grid-template-columns: 520px 1fr;
+  gap: 36px;
+  align-items:center;
+}
+
+.svcRow--reverse{
+  grid-template-columns: 1fr 420px;
+}
+
+.svcRow--reverse .svcImg{ order: 2; }
+.svcRow--reverse .svcContent{ order: 1; }
+
+/* ===== IMAGE BOX (IMPORTANT) ===== */
+.svcImg{
+   /* width: 480px; */
+  height: 250px;          
+  border-radius: 6px;
+  overflow:hidden;
+  background:#eee;
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+/* Make the real image fill + crop perfectly */
+.svcImg img{
+  width: 100%;
+  height: 100%;
+  display:block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ===== TEXT ===== */
+.svcContent{ padding-top: 2px; }
+
+.svcH{
+  margin: 0 0 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.svcP{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  width: 700px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px){
+  .svcRow,
+  .svcRow--reverse{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .svcImg{
+    width: 100%;
+    height: 180px;
+  }
+
+  .svcP{
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px){
+  .svcHero{ height: 200px; }
+  .svcHero__title{ font-size: 16px; }
+}
+
+.faqV2{
+  padding: 70px 0 90px;
+  background:#fff;
+}
+
+.faqV2__title{
+  margin: 0 0 44px;
+  text-align:center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #ff1f1f; /* heading red like screenshot */
+}
+
+.faqV2__list{
+  width: min(720px, 100%);
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap: 18px;
+}
+
+.faqItem{
+  border: 1px solid #ff6a00;
+  border-radius: 8px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.faqBtn{
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+  padding: 18px 22px;
+  border:0;
+  background: transparent;
+  cursor:pointer;
+  text-align:left;
+}
+
+.faqQ{
+  font-size: 20px;
+  font-weight: 500;
+  color:#111;
+}
+
+.faqPlus{
+  font-size: 22px;
+  font-weight: 500;
+  color:#111;
+  line-height: 1;
+  width: 22px;
+  text-align:center;
+}
+
+/* Answer (hidden by default) */
+.faqA{
+  display:none;
+  padding: 0 22px 18px;
+  font-size: 13px;
+  line-height: 1.55;
+  color:#333;
+}
+
+/* Open state */
+.faqItem.is-open .faqA{
+  display:block;
+}
+.faqItem.is-open .faqPlus{
+  transform: rotate(45deg); /* becomes × */
+}
+
+/* Responsive */
+@media (max-width: 640px){
+  .faqV2__title{ font-size: 26px; margin-bottom: 30px; }
+  .faqQ{ font-size: 16px; }
+  .faqBtn{ padding: 16px 16px; }
+  .faqA{ padding: 0 16px 16px; }
+}

@@ -1,6 +1,14 @@
 /* =========================
    HERO V2 (Reference match)
 ========================= */
+/* =========================
+   GLOBAL FONT
+========================= */
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
 
 .heroV2{
   position: relative;
